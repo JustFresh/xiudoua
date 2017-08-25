@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.justfresh.xiudoua.dao.JfCmsFilmMapper" >
+  <resultMap id="BaseResultMap" type="com.justfresh.xiudoua.model.JfCmsFilm" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="thumb" property="thumb" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="stars" property="stars" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="definition" property="definition" jdbcType="VARCHAR" />
+    <result column="release_time" property="releaseTime" jdbcType="VARCHAR" />
+    <result column="abstracts" property="abstracts" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="VARCHAR" />
+    <result column="douban" property="douban" jdbcType="VARCHAR" />
+    <result column="wangpan" property="wangpan" jdbcType="VARCHAR" />
+    <result column="xunlei" property="xunlei" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="BIGINT" />
+    <result column="reorder" property="reorder" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.justfresh.xiudoua.model.JfCmsFilm" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, category_id, category_name, thumb, title, stars, country, definition, release_time, 
+    abstracts, source, douban, wangpan, xunlei, create_time, last_update_time, reorder, 
+    status
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.justfresh.xiudoua.model.JfCmsFilmExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jf_cms_film
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.justfresh.xiudoua.model.JfCmsFilmExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from jf_cms_film
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jf_cms_film
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jf_cms_film
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.justfresh.xiudoua.model.JfCmsFilmExample" >
+    delete from jf_cms_film
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.justfresh.xiudoua.model.JfCmsFilm" >
+    insert into jf_cms_film (id, category_id, category_name, 
+      thumb, title, stars, 
+      country, definition, release_time, 
+      abstracts, source, douban, 
+      wangpan, xunlei, create_time, 
+      last_update_time, reorder, status, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{categoryName,jdbcType=VARCHAR}, 
+      #{thumb,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{stars,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{definition,jdbcType=VARCHAR}, #{releaseTime,jdbcType=VARCHAR}, 
+      #{abstracts,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, #{douban,jdbcType=VARCHAR}, 
+      #{wangpan,jdbcType=VARCHAR}, #{xunlei,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, 
+      #{lastUpdateTime,jdbcType=BIGINT}, #{reorder,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.justfresh.xiudoua.model.JfCmsFilm" >
+    insert into jf_cms_film
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="categoryName != null" >
+        category_name,
+      </if>
+      <if test="thumb != null" >
+        thumb,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="stars != null" >
+        stars,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="definition != null" >
+        definition,
+      </if>
+      <if test="releaseTime != null" >
+        release_time,
+      </if>
+      <if test="abstracts != null" >
+        abstracts,
+      </if>
+      <if test="source != null" >
+        source,
+      </if>
+      <if test="douban != null" >
+        douban,
+      </if>
+      <if test="wangpan != null" >
+        wangpan,
+      </if>
+      <if test="xunlei != null" >
+        xunlei,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastUpdateTime != null" >
+        last_update_time,
+      </if>
+      <if test="reorder != null" >
+        reorder,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryName != null" >
+        #{categoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="thumb != null" >
+        #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="stars != null" >
+        #{stars,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="definition != null" >
+        #{definition,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null" >
+        #{releaseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="abstracts != null" >
+        #{abstracts,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="douban != null" >
+        #{douban,jdbcType=VARCHAR},
+      </if>
+      <if test="wangpan != null" >
+        #{wangpan,jdbcType=VARCHAR},
+      </if>
+      <if test="xunlei != null" >
+        #{xunlei,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=BIGINT},
+      </if>
+      <if test="reorder != null" >
+        #{reorder,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.justfresh.xiudoua.model.JfCmsFilmExample" resultType="java.lang.Integer" >
+    select count(*) from jf_cms_film
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jf_cms_film
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.categoryId != null" >
+        category_id = #{record.categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="record.categoryName != null" >
+        category_name = #{record.categoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thumb != null" >
+        thumb = #{record.thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stars != null" >
+        stars = #{record.stars,jdbcType=VARCHAR},
+      </if>
+      <if test="record.country != null" >
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.definition != null" >
+        definition = #{record.definition,jdbcType=VARCHAR},
+      </if>
+      <if test="record.releaseTime != null" >
+        release_time = #{record.releaseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.abstracts != null" >
+        abstracts = #{record.abstracts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.source != null" >
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.douban != null" >
+        douban = #{record.douban,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wangpan != null" >
+        wangpan = #{record.wangpan,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xunlei != null" >
+        xunlei = #{record.xunlei,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.lastUpdateTime != null" >
+        last_update_time = #{record.lastUpdateTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.reorder != null" >
+        reorder = #{record.reorder,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update jf_cms_film
+    set id = #{record.id,jdbcType=INTEGER},
+      category_id = #{record.categoryId,jdbcType=INTEGER},
+      category_name = #{record.categoryName,jdbcType=VARCHAR},
+      thumb = #{record.thumb,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      stars = #{record.stars,jdbcType=VARCHAR},
+      country = #{record.country,jdbcType=VARCHAR},
+      definition = #{record.definition,jdbcType=VARCHAR},
+      release_time = #{record.releaseTime,jdbcType=VARCHAR},
+      abstracts = #{record.abstracts,jdbcType=VARCHAR},
+      source = #{record.source,jdbcType=VARCHAR},
+      douban = #{record.douban,jdbcType=VARCHAR},
+      wangpan = #{record.wangpan,jdbcType=VARCHAR},
+      xunlei = #{record.xunlei,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      last_update_time = #{record.lastUpdateTime,jdbcType=BIGINT},
+      reorder = #{record.reorder,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT},
+      content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jf_cms_film
+    set id = #{record.id,jdbcType=INTEGER},
+      category_id = #{record.categoryId,jdbcType=INTEGER},
+      category_name = #{record.categoryName,jdbcType=VARCHAR},
+      thumb = #{record.thumb,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      stars = #{record.stars,jdbcType=VARCHAR},
+      country = #{record.country,jdbcType=VARCHAR},
+      definition = #{record.definition,jdbcType=VARCHAR},
+      release_time = #{record.releaseTime,jdbcType=VARCHAR},
+      abstracts = #{record.abstracts,jdbcType=VARCHAR},
+      source = #{record.source,jdbcType=VARCHAR},
+      douban = #{record.douban,jdbcType=VARCHAR},
+      wangpan = #{record.wangpan,jdbcType=VARCHAR},
+      xunlei = #{record.xunlei,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      last_update_time = #{record.lastUpdateTime,jdbcType=BIGINT},
+      reorder = #{record.reorder,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.justfresh.xiudoua.model.JfCmsFilm" >
+    update jf_cms_film
+    <set >
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryName != null" >
+        category_name = #{categoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="thumb != null" >
+        thumb = #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="stars != null" >
+        stars = #{stars,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="definition != null" >
+        definition = #{definition,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null" >
+        release_time = #{releaseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="abstracts != null" >
+        abstracts = #{abstracts,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="douban != null" >
+        douban = #{douban,jdbcType=VARCHAR},
+      </if>
+      <if test="wangpan != null" >
+        wangpan = #{wangpan,jdbcType=VARCHAR},
+      </if>
+      <if test="xunlei != null" >
+        xunlei = #{xunlei,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateTime != null" >
+        last_update_time = #{lastUpdateTime,jdbcType=BIGINT},
+      </if>
+      <if test="reorder != null" >
+        reorder = #{reorder,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.justfresh.xiudoua.model.JfCmsFilm" >
+    update jf_cms_film
+    set category_id = #{categoryId,jdbcType=INTEGER},
+      category_name = #{categoryName,jdbcType=VARCHAR},
+      thumb = #{thumb,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      stars = #{stars,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      definition = #{definition,jdbcType=VARCHAR},
+      release_time = #{releaseTime,jdbcType=VARCHAR},
+      abstracts = #{abstracts,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      douban = #{douban,jdbcType=VARCHAR},
+      wangpan = #{wangpan,jdbcType=VARCHAR},
+      xunlei = #{xunlei,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      last_update_time = #{lastUpdateTime,jdbcType=BIGINT},
+      reorder = #{reorder,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.justfresh.xiudoua.model.JfCmsFilm" >
+    update jf_cms_film
+    set category_id = #{categoryId,jdbcType=INTEGER},
+      category_name = #{categoryName,jdbcType=VARCHAR},
+      thumb = #{thumb,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      stars = #{stars,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      definition = #{definition,jdbcType=VARCHAR},
+      release_time = #{releaseTime,jdbcType=VARCHAR},
+      abstracts = #{abstracts,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      douban = #{douban,jdbcType=VARCHAR},
+      wangpan = #{wangpan,jdbcType=VARCHAR},
+      xunlei = #{xunlei,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      last_update_time = #{lastUpdateTime,jdbcType=BIGINT},
+      reorder = #{reorder,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  	<!-- 按条件，查询最大ID -->
+	<select id="selectMaxIdByExample" resultType="java.lang.Integer" parameterType="com.justfresh.xiudoua.model.JfCmsFilm">
+		select max(id) from jf_cms_film
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+
+	<!-- 分页 -->
+	<select id="selectWithPageByExample" resultMap="BaseResultMap"
+		parameterType="map">
+		select * from jf_cms_film
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+		<if test="example.orderByClause != null">
+			order by
+			${example.orderByClause} ${params.order}
+		</if>
+		limit ${params.rowStart}, ${params.pageSize}
+	</select>
+</mapper>

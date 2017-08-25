@@ -1,0 +1,10 @@
+/**
+ *
+ */
+body{font-family: 'Î¢ÈíÑÅºÚ' !important;font-size: 12px !important;}
+.content{margin: 15px 0px;}
+.thumb{width: 150px;}
+.content .blog_element .baseinfo{}
+.content .blog_element .extinfo{width: 575px;}
+.content .blog_element .extinfo h4{font-weight: bold;color: #333;font-size: 16px;}
+.content .blog_element .extinfo p{line-height: 20px;}

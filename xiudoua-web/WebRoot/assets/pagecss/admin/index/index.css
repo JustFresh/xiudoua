@@ -1,0 +1,32 @@
+/**
+ * @desc: 管理员首页样式文件
+ * @time: 2017-06-24 16:17
+ * @autohor: JustFresh
+ * @version: v1.0.0
+ */
+.content .total{margin-top: 15px;}
+.content .total .panel-body{text-align: center;color: #666;}
+.content .total .panel-body h3{display: inline-block;padding: 25px;border-radius: 50%;}
+.content .total .panel-body h3 i{}
+.content .total .panel-body p{display: inline-block;}
+.content .total .panel-footer ul{margin: 0px;padding: 0px;}
+.content .total .panel-footer ul li{list-style: none;float: left;margin: 0px;padding: 0px;text-align: center;border-right: 1px solid #d6e9c6;}
+.content .total .panel-footer ul li:last-child{border-right: none;}
+.content .transation-block h3{border:1px solid #d6e9c6;}
+.content .transation-block h3 i{color: #d6e9c6;}
+.content .transation-block .panel-footer ul li{width: 25%;}
+
+.content .goods-block h3{border:1px solid #d9edf7;}
+.content .goods-block h3 i{color: #d9edf7;}
+.content .goods-block .panel-footer ul li{width: 33%;}
+
+.content .user-block h3{border:1px solid #faebcc;}
+.content .user-block h3 i{color: #faebcc;}
+.content .user-block .panel-footer ul li{width: 50%;}
+
+.content .article-block h3{border:1px solid #ebccd1;}
+.content .article-block h3 i{color: #ebccd1;}
+.content .article-block .panel-footer ul li{width: 33%;}
+
+#saleChart{width: 100%;height: 500px;}
+#goodsChart{width: 100%;height: 500px;}

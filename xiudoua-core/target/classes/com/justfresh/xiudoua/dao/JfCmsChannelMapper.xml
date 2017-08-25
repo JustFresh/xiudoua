@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.justfresh.xiudoua.dao.JfCmsChannelMapper" >
+  <resultMap id="BaseResultMap" type="com.justfresh.xiudoua.model.JfCmsChannel" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+    <result column="full_name" property="fullName" jdbcType="VARCHAR" />
+    <result column="introduce" property="introduce" jdbcType="VARCHAR" />
+    <result column="thumb" property="thumb" jdbcType="VARCHAR" />
+    <result column="c_type" property="cType" jdbcType="TINYINT" />
+    <result column="is_nav" property="isNav" jdbcType="TINYINT" />
+    <result column="is_blank" property="isBlank" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="reorder" property="reorder" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="TINYINT" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, parent_id, full_name, introduce, thumb, c_type, is_nav, is_blank, create_time, 
+    status, reorder, level, description
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.justfresh.xiudoua.model.JfCmsChannelExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from jf_cms_channel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jf_cms_channel
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jf_cms_channel
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.justfresh.xiudoua.model.JfCmsChannelExample" >
+    delete from jf_cms_channel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.justfresh.xiudoua.model.JfCmsChannel" >
+    insert into jf_cms_channel (id, name, parent_id, 
+      full_name, introduce, thumb, 
+      c_type, is_nav, is_blank, 
+      create_time, status, reorder, 
+      level, description)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}, 
+      #{fullName,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, #{thumb,jdbcType=VARCHAR}, 
+      #{cType,jdbcType=TINYINT}, #{isNav,jdbcType=TINYINT}, #{isBlank,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, #{reorder,jdbcType=INTEGER}, 
+      #{level,jdbcType=TINYINT}, #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.justfresh.xiudoua.model.JfCmsChannel" >
+    insert into jf_cms_channel
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="fullName != null" >
+        full_name,
+      </if>
+      <if test="introduce != null" >
+        introduce,
+      </if>
+      <if test="thumb != null" >
+        thumb,
+      </if>
+      <if test="cType != null" >
+        c_type,
+      </if>
+      <if test="isNav != null" >
+        is_nav,
+      </if>
+      <if test="isBlank != null" >
+        is_blank,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="reorder != null" >
+        reorder,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="fullName != null" >
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="thumb != null" >
+        #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="cType != null" >
+        #{cType,jdbcType=TINYINT},
+      </if>
+      <if test="isNav != null" >
+        #{isNav,jdbcType=TINYINT},
+      </if>
+      <if test="isBlank != null" >
+        #{isBlank,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="reorder != null" >
+        #{reorder,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=TINYINT},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.justfresh.xiudoua.model.JfCmsChannelExample" resultType="java.lang.Integer" >
+    select count(*) from jf_cms_channel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jf_cms_channel
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentId != null" >
+        parent_id = #{record.parentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.fullName != null" >
+        full_name = #{record.fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduce != null" >
+        introduce = #{record.introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thumb != null" >
+        thumb = #{record.thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cType != null" >
+        c_type = #{record.cType,jdbcType=TINYINT},
+      </if>
+      <if test="record.isNav != null" >
+        is_nav = #{record.isNav,jdbcType=TINYINT},
+      </if>
+      <if test="record.isBlank != null" >
+        is_blank = #{record.isBlank,jdbcType=TINYINT},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.reorder != null" >
+        reorder = #{record.reorder,jdbcType=INTEGER},
+      </if>
+      <if test="record.level != null" >
+        level = #{record.level,jdbcType=TINYINT},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jf_cms_channel
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      parent_id = #{record.parentId,jdbcType=INTEGER},
+      full_name = #{record.fullName,jdbcType=VARCHAR},
+      introduce = #{record.introduce,jdbcType=VARCHAR},
+      thumb = #{record.thumb,jdbcType=VARCHAR},
+      c_type = #{record.cType,jdbcType=TINYINT},
+      is_nav = #{record.isNav,jdbcType=TINYINT},
+      is_blank = #{record.isBlank,jdbcType=TINYINT},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=TINYINT},
+      reorder = #{record.reorder,jdbcType=INTEGER},
+      level = #{record.level,jdbcType=TINYINT},
+      description = #{record.description,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.justfresh.xiudoua.model.JfCmsChannel" >
+    update jf_cms_channel
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="fullName != null" >
+        full_name = #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="thumb != null" >
+        thumb = #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="cType != null" >
+        c_type = #{cType,jdbcType=TINYINT},
+      </if>
+      <if test="isNav != null" >
+        is_nav = #{isNav,jdbcType=TINYINT},
+      </if>
+      <if test="isBlank != null" >
+        is_blank = #{isBlank,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="reorder != null" >
+        reorder = #{reorder,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=TINYINT},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.justfresh.xiudoua.model.JfCmsChannel" >
+    update jf_cms_channel
+    set name = #{name,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      full_name = #{fullName,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      thumb = #{thumb,jdbcType=VARCHAR},
+      c_type = #{cType,jdbcType=TINYINT},
+      is_nav = #{isNav,jdbcType=TINYINT},
+      is_blank = #{isBlank,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=BIGINT},
+      status = #{status,jdbcType=TINYINT},
+      reorder = #{reorder,jdbcType=INTEGER},
+      level = #{level,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  	<!-- 按条件，查询最大ID -->
+	<select id="selectMaxIdByExample" resultType="java.lang.Integer" parameterType="com.justfresh.xiudoua.model.JfCmsChannel">
+		select max(id) from jf_cms_channel
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+
+	<!-- 分页 -->
+	<select id="selectWithPageByExample" resultMap="BaseResultMap"
+		parameterType="map">
+		select * from jf_cms_channel
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+		<if test="example.orderByClause != null">
+			order by
+			${example.orderByClause} ${params.order}
+		</if>
+		limit ${params.rowStart}, ${params.pageSize}
+	</select>
+</mapper>

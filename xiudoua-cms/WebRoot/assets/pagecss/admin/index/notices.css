@@ -1,0 +1,6 @@
+/**
+ *
+ */
+ 
+#acceptUsersDialog ul,#refuseUsersDialog ul{margin: 15px 0px;padding: 0px;}
+#acceptUsersDialog ul li,#refuseUsersDialog ul li{list-style: none;width: 105px;float: left;margin-bottom: 10px;}

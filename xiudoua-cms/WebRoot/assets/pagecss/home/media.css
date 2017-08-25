@@ -1,0 +1,27 @@
+/**
+ *
+ */
+body{font-family: 'Î¢ÈíÑÅºÚ' !important;font-size: 12px !important;}
+.content{margin: 20px 0px;}
+.content .content-detail{width: 1130px;min-height: 550px;}
+.content .content-detail .title{border-bottom: 1px solid #e3e3e3;text-align: center;}
+.content .content-detail .title h1{color: #333;font-size: 24px;font-weight: bold;}
+.content .content-detail .title p{color: #999;font-size: 14px;font-weight: normal;margin: 15px 0px 10px;}
+.content .content-detail .content-body{padding: 20px 15px;}
+.content .content-detail .content-body p{line-height: 22px !important;}
+.content .content-detail .baidu-share{margin-bottom: 5px;border-bottom: 1px solid #e3e3e3;padding-bottom: 15px;}
+.content .content-detail .content-links{font-size: 12px;padding: 5px;}
+.content .content-detail .content-links i{background-color: #ff6600;color: #fff;display: inline-block;width: 12px;height: 12px;text-align: center;text-align: center;}
+.content .content-detail .comment-box{margin: 25px 0px 15px;}
+.content .content-detail .comment-box textarea{width: 1100px;border: 1px solid #e3e3e3;padding: 10px;resize: none;}
+.content .content-detail .comment-box .form-group{margin-top: 15px;font-size: 12px;}
+.content .content-detail .comment-box .form-group .verify-code{border: 1px solid #e3e3e3;height: 22px;padding: 2px 5px;}
+.content .content-detail .comment-box .form-group .warning{color: #ff6600;}
+.content .content-detail .comment-box .form-group .comment-btn{background-color: #ff9900;padding: 2px 25px;height: 26px;border: none;color: #fff;cursor: pointer;}
+.content .content-detail .comment-list{}
+.content .content-detail .comment-list ul li{border-top: 1px dashed #e3e3e3;padding: 10px 0px;}
+.content .content-detail .comment-list ul li .user-head{width: 50px;height: 50px;border-radius: 50%;border: 1px solid #e3e3e3;margin-right: 10px;}
+.content .content-detail .comment-list ul li .info h3{font-size: 16px;padding: 0px;margin: 0px;}
+.content .content-detail .comment-list ul li .info p{margin-top: 3px;}
+.content .content-detail .comment-list a.load-more{display: block;background-color: #f3f3f3;margin: 10px 0px;text-align: center;height: 40px;line-height: 40px;}
+

@@ -1,0 +1,7 @@
+/**
+ *
+ */
+.search-form{margin-top: 15px;}
+.search-form .form-element{margin-left: 10px;color: #666;}
+.search-form .form-element .input-text,.search-form .form-element .input-select{padding: 8px;border: 1px solid #e3e3e3 !important;outline: none;color: #666;}
+

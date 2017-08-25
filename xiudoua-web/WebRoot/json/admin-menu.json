@@ -1,0 +1,90 @@
+{
+	"success": true,
+	"msg": "后台菜单列表",
+	"list": [
+		{
+			"id": "1","title": "控制台","linkUrl":"admin/index.do?mod=index&act=index","isDisplay":true,"reorder":1,"mod":"index","children":[
+				{"id": "1_1","title": "控制台","icon":"fa fa-dashboard","linkUrl":"admin/index.do?mod=index&act=index","act":"index","isDisplay":true,"reorder":1},
+				{"id": "1_2","title": "关于我们","icon":"fa fa-adjust","linkUrl":"admin/index.do?mod=index&act=aboutUs","act":"aboutUs","isDisplay":true,"reorder":2},
+				{"id": "1_3","title": "站点设置","icon":"fa fa-anchor","linkUrl":"admin/index.do?mod=index&act=config","act":"config","isDisplay":true,"reorder":3},
+				{"id": "1_4","title": "账号同步","icon":"fa fa-circle","linkUrl":"admin/index.do?mod=index&act=accoutSync","act":"accoutSync","isDisplay":true,"reorder":1},
+				{"id": "1_5","title": "上传设置","icon":"fa fa-upload","linkUrl":"admin/index.do?mod=index&act=uploadConfig","act":"uploadConfig","isDisplay":true,"reorder":2},
+				{"id": "1_6","title": "SEO设置","icon":"fa fa-cloud","linkUrl":"admin/index.do?mod=index&act=seo","act":"seo","isDisplay":true,"reorder":3},
+				{"id": "1_7","title": "消息通知","icon":"fa fa-comment-o","linkUrl":"admin/index.do?mod=index&act=messages","act":"messages","isDisplay":true,"reorder":4},
+				{"id": "1_8","title": "支付方式","icon":"fa fa-credit-card","linkUrl":"admin/index.do?mod=index&act=pay","act":"pay","isDisplay":true,"reorder":5},
+				{"id": "1_9","title": "清理缓存","icon":"fa fa-refresh","linkUrl":"admin/index.do?mod=index&act=cache","act":"cache","isDisplay":true,"reorder":6},
+				{"id": "1_10","title": "搜索关键字","icon":"fa fa-cog","linkUrl":"admin/index.do?mod=index&act=keywords","act":"keywords","isDisplay":true,"reorder":7},
+				{"id": "1_11","title": "手机支付","icon":"fa fa-mobile","linkUrl":"admin/index.do?mod=index&act=mobilePay","act":"mobilePay","isDisplay":true,"reorder":8},
+				{"id": "1_12","title": "操作日志","icon":"fa fa-eyedropper","linkUrl":"admin/index.do?mod=index&act=logs","act":"logs","isDisplay":true,"reorder":9}
+			]
+		},{
+			"id": "3","title": "商品","linkUrl":"admin/index.do?mod=goods&act=categorys","isDisplay":true,"reorder":3,"mod":"goods","children":[
+				{"id": "3_1","title": "分类管理","icon":"fa fa-list","linkUrl":"admin/index.do?mod=goods&act=categorys","act":"categorys","isDisplay":true,"reorder":1},
+				{"id": "3_2","title": "品牌管理","icon":"fa fa-flag","linkUrl":"admin/index.do?mod=goods&act=brands","act":"brands","isDisplay":true,"reorder":2},
+				{"id": "3_3","title": "商品管理","icon":"fa fa-gift","linkUrl":"admin/index.do?mod=goods&act=goods","act":"goods","isDisplay":true,"reorder":3},
+				{"id": "3_4","title": "类型管理","icon":"fa fa-navicon","linkUrl":"admin/index.do?mod=goods&act=types","act":"types","isDisplay":true,"reorder":4},
+				{"id": "3_5","title": "规格管理","icon":"fa fa-minus-square","linkUrl":"admin/index.do?mod=goods&act=spec","act":"spec","isDisplay":true,"reorder":5},
+				{"id": "3_6","title": "图片空间","icon":"fa fa-image","linkUrl":"admin/index.do?mod=goods&act=images","act":"images","isDisplay":true,"reorder":6}
+			]
+		},{
+			"id": "4","title": "会员","linkUrl":"admin/index.do?mod=member&act=index","isDisplay":true,"reorder":4,"mod":"member","children":[
+				{"id": "4_1","title": "会员管理","icon":"fa fa-user","linkUrl":"admin/index.do?mod=member&act=index","act":"index","isDisplay":true,"reorder":1},
+				{"id": "4_2","title": "会员级别","icon":"fa fa-level-down","linkUrl":"admin/index.do?mod=member&act=memberLevel","act":"memberLevel","isDisplay":true,"reorder":2},
+				{"id": "4_3","title": "经验值管理","icon":"fa fa-random","linkUrl":"admin/index.do?mod=member&act=empirValue","act":"empirValue","isDisplay":true,"reorder":3},
+				{"id": "4_4","title": "会员通知","icon":"fa fa-info-circle","linkUrl":"admin/index.do?mod=member&act=infoList","act":"infoList","isDisplay":true,"reorder":4},
+				{"id": "4_5","title": "预存款","icon":"fa fa-money","linkUrl":"admin/index.do?mod=member&act=preDeposit","act":"preDeposit","isDisplay":true,"reorder":5},
+				{"id": "4_6","title": "分享绑定","icon":"fa fa-share-alt","linkUrl":"admin/index.do?mod=member&act=shareBind","act":"shareBind","isDisplay":true,"reorder":6}
+			]
+		},{
+			"id": "5","title": "交易","linkUrl":"admin/index.do?mod=transaction&act=order","isDisplay":true,"reorder":5,"mod":"transaction","children":[
+				{"id": "5_1","title": "实物订单","icon":"fa fa-cart-plus","linkUrl":"admin/index.do?mod=transaction&act=order","act":"order","isDisplay":true,"reorder":1},
+				{"id": "5_2","title": "退款管理","icon":"fa fa-retweet","linkUrl":"admin/index.do?mod=transaction&act=refund","act":"refund","isDisplay":true,"reorder":2},
+				{"id": "5_3","title": "退货管理","icon":"fa fa-arrow-left","linkUrl":"admin/index.do?mod=transaction&act=returnGoods","act":"returnGoods","isDisplay":true,"reorder":3},
+				{"id": "5_4","title": "咨询管理","icon":"fa fa-question","linkUrl":"admin/index.do?mod=transaction&act=consult","act":"consult","isDisplay":true,"reorder":4},
+				{"id": "5_5","title": "举报管理","icon":"fa fa-reply-all","linkUrl":"admin/index.do?mod=transaction&act=report","act":"report","isDisplay":true,"reorder":5},
+				{"id": "5_6","title": "评价管理","icon":"fa fa-comment-o","linkUrl":"admin/index.do?mod=transaction&act=comment","act":"comment","isDisplay":true,"reorder":6}
+			]
+		},{
+			"id": "6","title": "网站","linkUrl":"admin/index.do?mod=site&act=articleCategorys","isDisplay":true,"reorder":6,"mod":"site","children":[
+				{"id": "6_1","title": "文章分类","icon":"fa fa-list","linkUrl":"admin/index.do?mod=site&act=articleCategorys","act":"articleCategorys","isDisplay":true,"reorder":1},
+				{"id": "6_2","title": "文章管理","icon":"fa fa-cc","linkUrl":"admin/index.do?mod=site&act=articles","act":"articles","isDisplay":true,"reorder":2},
+				{"id": "6_3","title": "会员协议","icon":"fa fa-user","linkUrl":"admin/index.do?mod=site&act=agreement","act":"agreement","isDisplay":true,"reorder":3},
+				{"id": "6_4","title": "页面导航","icon":"fa fa-pagelines","linkUrl":"admin/index.do?mod=site&act=pageNavlist","act":"pageNavlist","isDisplay":true,"reorder":4},
+				{"id": "6_5","title": "广告位管理","icon":"fa fa-magic","linkUrl":"admin/index.do?mod=site&act=adsPlace","act":"adsPlace","isDisplay":true,"reorder":5},
+				{"id": "6_5","title": "广告管理","icon":"fa fa-buysellads","linkUrl":"admin/index.do?mod=site&act=ads","act":"ads","isDisplay":true,"reorder":6}
+			]
+		},{
+			"id": "7","title": "运营","linkUrl":"admin/index.do?mod=operate&act=basic","isDisplay":true,"reorder":7,"mod":"operate","children":[
+				{"id": "7_1","title": "基本设置","icon":"fa fa-database","linkUrl":"admin/index.do?mod=operate&act=basic","act":"basic","isDisplay":true,"reorder":1},
+				{"id": "7_2","title": "抢购管理","icon":"fa fa-shopping-cart","linkUrl":"admin/index.do?mod=operate&act=panicBuying","act":"panicBuying","isDisplay":true,"reorder":2},
+				{"id": "7_3","title": "限时折扣","icon":"fa fa-money","linkUrl":"admin/index.do?mod=operate&act=discount","act":"discount","isDisplay":true,"reorder":3},
+				{"id": "7_4","title": "满即送","icon":"fa fa-shield","linkUrl":"admin/index.do?mod=operate&act=fullFree","act":"fullFree","isDisplay":true,"reorder":4},
+				{"id": "7_5","title": "代金券","icon":"fa fa-ticket","linkUrl":"admin/index.do?mod=operate&act=cashCoupon","act":"cashCoupon","isDisplay":true,"reorder":5},
+				{"id": "7_6","title": "兑换礼品","icon":"fa fa-gift","linkUrl":"admin/index.do?mod=operate&act=gifts","act":"gifts","isDisplay":true,"reorder":6},
+				{"id": "7_7","title": "平台客服","icon":"fa fa-tty","linkUrl":"admin/index.do?mod=operate&act=customerService","act":"customerService","isDisplay":true,"reorder":7},
+				{"id": "7_8","title": "平台充值卡","icon":"fa fa-credit-card","linkUrl":"admin/index.do?mod=operate&act=chargeCard","act":"chargeCard","isDisplay":true,"reorder":8}
+			]
+		},{
+			"id": "8","title": "统计","linkUrl":"admin/index.do?mod=chart&act=index","isDisplay":true,"reorder":8,"mod":"chart","children":[
+				{"id": "8_1","title": "概述及设置","icon":"fa fa-adjust","linkUrl":"admin/index.do?mod=chart&act=index","act":"index","isDisplay":true,"reorder":1},
+				{"id": "8_2","title": "会员统计","icon":"fa fa-user","linkUrl":"admin/index.do?mod=chart&act=memberChart","act":"memberChart","isDisplay":true,"reorder":2},
+				{"id": "8_3","title": "销量分析","icon":"fa fa-bar-chart","linkUrl":"admin/index.do?mod=chart&act=saleChart","act":"saleChart","isDisplay":true,"reorder":3},
+				{"id": "8_4","title": "访问分析","icon":"fa fa-line-chart","linkUrl":"admin/index.do?mod=chart&act=visitChart","act":"visitChart","isDisplay":true,"reorder":4}
+			]
+		},{
+			"id": "9","title": "WAP","linkUrl":"admin/index.do?mod=wap&act=index","isDisplay":true,"reorder":9,"mod":"wap","children":[
+				{"id": "9_1","title": "WAP设置","icon":"fa fa-adjust","linkUrl":"admin/index.do?mod=wap&act=index","act":"index","isDisplay":true,"reorder":1},
+				{"id": "9_2","title": "广告管理","icon":"fa fa-buysellads","linkUrl":"admin/index.do?mod=wap&act=advs","act":"advs","isDisplay":true,"reorder":2},
+				{"id": "9_3","title": "评论管理","icon":"fa fa-comment","linkUrl":"admin/index.do?mod=wap&act=comments","act":"comments","isDisplay":true,"reorder":3}
+			]
+		},{
+			"id": "10","title": "CMS","linkUrl":"admin/index.do?mod=cms&act=index","isDisplay":true,"reorder":10,"mod":"cms","children":[
+				{"id": "10_1","title": "CMS管理","icon":"fa fa-adjust","linkUrl":"admin/index.do?mod=cms&act=index","act":"index","isDisplay":true,"reorder":1},
+				{"id": "10_2","title": "文章管理","icon":"fa fa-cc","linkUrl":"admin/index.do?mod=cms&act=articles","act":"articles","isDisplay":true,"reorder":2},
+				{"id": "10_3","title": "文章分类","icon":"fa fa-list","linkUrl":"admin/index.do?mod=cms&act=articleCategorys","act":"articleCategorys","isDisplay":true,"reorder":3},
+				{"id": "10_4","title": "导航管理","icon":"fa fa-bars","linkUrl":"admin/index.do?mod=cms&act=navlist","act":"comments","navlist":true,"reorder":4},
+				{"id": "10_5","title": "专题管理","icon":"fa fa-leaf","linkUrl":"admin/index.do?mod=cms&act=topics","act":"topics","isDisplay":true,"reorder":5}
+			]
+		}
+	]
+}

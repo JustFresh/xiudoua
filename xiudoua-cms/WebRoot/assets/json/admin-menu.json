@@ -1,0 +1,26 @@
+{
+	"success": true,
+	"msg": "后台菜单列表",
+	"list": [
+		{
+			"id": "1","title": "控制台","linkUrl":"admin/index.htm?mod=index&act=index","isDisplay":true,"reorder":1,"mod":"index","children":[
+				{"id": "1_1","title": "控制台","icon":"fa fa-dashboard","linkUrl":"admin/index.htm?mod=index&act=index","act":"index","isDisplay":true,"reorder":1},
+				{"id": "1_2","title": "关于我们","icon":"fa fa-adjust","linkUrl":"admin/index.htm?mod=index&act=aboutUs","act":"aboutUs","isDisplay":true,"reorder":2},
+				{"id": "1_3","title": "站点设置","icon":"fa fa-anchor","linkUrl":"admin/index.htm?mod=index&act=config","act":"config","isDisplay":true,"reorder":3},
+				{"id": "1_4","title": "权限设置","icon":"fa fa-circle","linkUrl":"admin/index.htm?mod=index&act=power","act":"power","isDisplay":true,"reorder":4},
+				{"id": "1_5","title": "系统留言","icon":"fa fa-upload","linkUrl":"admin/index.htm?mod=index&act=messages","act":"messages","isDisplay":true,"reorder":5},
+				{"id": "1_6","title": "友情链接","icon":"fa fa-link","linkUrl":"admin/index.htm?mod=index&act=links","act":"links","isDisplay":true,"reorder":6},
+				{"id": "1_7","title": "消息通知","icon":"fa fa-comment-o","linkUrl":"admin/index.htm?mod=index&act=notices","act":"notices","isDisplay":true,"reorder":7},
+				{"id": "1_8","title": "用户列表","icon":"fa fa-user","linkUrl":"admin/index.htm?mod=index&act=users","act":"users","isDisplay":true,"reorder":8}
+			]
+		},{
+			"id": "2","title": "CMS","linkUrl":"admin/index.htm?mod=cms&act=ads","isDisplay":true,"reorder":2,"mod":"cms","children":[
+				{"id": "2_1","title": "广告管理","icon":"fa fa-list","linkUrl":"admin/index.htm?mod=cms&act=ads","act":"ads","isDisplay":true,"reorder":1},
+				{"id": "2_2","title": "栏目管理","icon":"fa fa-flag","linkUrl":"admin/index.htm?mod=cms&act=channels","act":"channels","isDisplay":true,"reorder":2},
+				{"id": "2_3","title": "文章管理","icon":"fa fa-gift","linkUrl":"admin/index.htm?mod=cms&act=contents","act":"contents","isDisplay":true,"reorder":3},
+				{"id": "2_4","title": "影片分类管理","icon":"fa fa-server","linkUrl":"admin/index.htm?mod=cms&act=film_categorys","act":"film_categorys","isDisplay":true,"reorder":4},
+				{"id": "2_5","title": "影片管理","icon":"fa fa-film","linkUrl":"admin/index.htm?mod=cms&act=films","act":"films","isDisplay":true,"reorder":5}
+			]
+		}
+	]
+}

@@ -1,0 +1,13 @@
+/**
+ *
+ */
+ 
+.main .content .tab-panel{margin: 20px 0px 0px;padding: 0px 15px;}
+.main .content .tab-panel li{list-style: none;display: none;}
+.main .content .tab-panel li.selected{display: block;}
+label{display: block;}
+label em{color: #c33610;font-style: normal;font-size: 12px;}
+
+.main .content .tab-nav ul li em{color: #fff;font-size: 12px;font-style: normal;display: inline-block;margin-left: 5px;padding: 2px 4px;}
+.main .content .tab-nav ul li em.success{background-color: #4cae4c;}
+.main .content .tab-nav ul li em.danger{background-color: #c33610;}

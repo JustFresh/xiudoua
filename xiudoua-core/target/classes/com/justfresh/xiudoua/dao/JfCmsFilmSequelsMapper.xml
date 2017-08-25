@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.justfresh.xiudoua.dao.JfCmsFilmSequelsMapper" >
+  <resultMap id="BaseResultMap" type="com.justfresh.xiudoua.model.JfCmsFilmSequels" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="film_id" property="filmId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="reorder" property="reorder" jdbcType="INTEGER" />
+    <result column="wangpan" property="wangpan" jdbcType="VARCHAR" />
+    <result column="xunlei" property="xunlei" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, film_id, name, title, reorder, wangpan, xunlei
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequelsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from jf_cms_film_sequels
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jf_cms_film_sequels
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jf_cms_film_sequels
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequelsExample" >
+    delete from jf_cms_film_sequels
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequels" >
+    insert into jf_cms_film_sequels (id, film_id, name, 
+      title, reorder, wangpan, 
+      xunlei)
+    values (#{id,jdbcType=INTEGER}, #{filmId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{reorder,jdbcType=INTEGER}, #{wangpan,jdbcType=VARCHAR}, 
+      #{xunlei,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequels" >
+    insert into jf_cms_film_sequels
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="filmId != null" >
+        film_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="reorder != null" >
+        reorder,
+      </if>
+      <if test="wangpan != null" >
+        wangpan,
+      </if>
+      <if test="xunlei != null" >
+        xunlei,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="filmId != null" >
+        #{filmId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="reorder != null" >
+        #{reorder,jdbcType=INTEGER},
+      </if>
+      <if test="wangpan != null" >
+        #{wangpan,jdbcType=VARCHAR},
+      </if>
+      <if test="xunlei != null" >
+        #{xunlei,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequelsExample" resultType="java.lang.Integer" >
+    select count(*) from jf_cms_film_sequels
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jf_cms_film_sequels
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.filmId != null" >
+        film_id = #{record.filmId,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reorder != null" >
+        reorder = #{record.reorder,jdbcType=INTEGER},
+      </if>
+      <if test="record.wangpan != null" >
+        wangpan = #{record.wangpan,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xunlei != null" >
+        xunlei = #{record.xunlei,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jf_cms_film_sequels
+    set id = #{record.id,jdbcType=INTEGER},
+      film_id = #{record.filmId,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      reorder = #{record.reorder,jdbcType=INTEGER},
+      wangpan = #{record.wangpan,jdbcType=VARCHAR},
+      xunlei = #{record.xunlei,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequels" >
+    update jf_cms_film_sequels
+    <set >
+      <if test="filmId != null" >
+        film_id = #{filmId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="reorder != null" >
+        reorder = #{reorder,jdbcType=INTEGER},
+      </if>
+      <if test="wangpan != null" >
+        wangpan = #{wangpan,jdbcType=VARCHAR},
+      </if>
+      <if test="xunlei != null" >
+        xunlei = #{xunlei,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequels" >
+    update jf_cms_film_sequels
+    set film_id = #{filmId,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      reorder = #{reorder,jdbcType=INTEGER},
+      wangpan = #{wangpan,jdbcType=VARCHAR},
+      xunlei = #{xunlei,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  	<!-- 按条件，查询最大ID -->
+	<select id="selectMaxIdByExample" resultType="java.lang.Integer" parameterType="com.justfresh.xiudoua.model.JfCmsFilmSequels">
+		select max(id) from jf_cms_film_sequels
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+</mapper>

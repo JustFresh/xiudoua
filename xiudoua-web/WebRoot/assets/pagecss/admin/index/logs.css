@@ -1,0 +1,13 @@
+/**
+ *
+ */
+
+.search-form{margin-top: 15px;}
+.search-form .form-element{margin-left: 10px;color: #666;}
+.search-form .form-element .input-text,.search-form .form-element .input-select{padding: 8px;border: 1px solid #e3e3e3 !important;outline: none;color: #666;}
+
+.warning-info{margin: 0px 15px 10px;color: #eea236;border-bottom: 1px dotted #e3e3e3;padding-bottom: 15px;}
+.warning-info h4{margin: 0px 0px 15px;padding: 0px 10px 10px;border-bottom: 1px solid #eea236;}
+.warning-info p{line-height: 20px;color: #999;}
+
+.bottom-opts{margin-top: 0px;border: 1px solid #e3e3e3;padding: 10px;}

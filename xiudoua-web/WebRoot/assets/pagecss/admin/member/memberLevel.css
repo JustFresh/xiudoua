@@ -1,0 +1,15 @@
+/**
+ *
+ */
+
+.warning-info{margin: 15px;color: #eea236;border-bottom: 1px dotted #e3e3e3;padding-bottom: 15px;}
+.warning-info h4{margin: 0px 0px 15px;padding: 15px;border-bottom: 1px solid #eea236;}
+.warning-info p{line-height: 20px;color: #999;}
+
+.level h4{margin: 0px 0px 15px;padding: 15px;border-bottom: 1px solid #d1d1d1;}
+.level dl{margin: 0px;padding: 0px;}
+.level dl dt label,.level dl dd label{display: block;width: 100px;color: #333;margin-left: 15px;}
+.level dl dt{margin-bottom: 15px;}
+.level dl dd{height: 45px;vertical-align: middle;}
+.level dl dd label{color: #999;}
+.level dl dd .input-text{padding: 5px;}

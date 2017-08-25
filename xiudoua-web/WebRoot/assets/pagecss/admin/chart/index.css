@@ -1,0 +1,9 @@
+/**
+ *
+ */
+.info-table{margin: 15px;}
+.info-table table thead tr{background-color: #DEEFFB;}
+.info-table table tbody tr td p{font-size: auto;margin: 0px;}
+
+.chart h4{background-color: #DEEFFB;padding: 15px;}
+#trendChart{width: 100%;height: 400px;}

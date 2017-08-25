@@ -1,0 +1,42 @@
+/**
+ * @author£ºJustFresh
+ * @time£º2017-08-17 13:29
+ * @desc£º
+ */
+body{font-family: 'Î¢ÈíÑÅºÚ' !important;font-size: 12px !important;}
+.content{margin: 20px 0px;}
+.content .content-detail{width: 720px;min-height: 550px;}
+.content .content-detail .title{border-bottom: 1px solid #e3e3e3;text-align: center;}
+.content .content-detail .title h1{color: #333;font-size: 24px;font-weight: bold;}
+.content .content-detail .title p{color: #999;font-size: 14px;font-weight: normal;margin: 15px 0px 10px;}
+.content .content-detail .content-body{padding: 15px;}
+.content .content-detail .content-body p{line-height: 22px !important;}
+.content .content-detail .baidu-share{margin-bottom: 5px;border-bottom: 1px solid #e3e3e3;padding-bottom: 15px;}
+.content .content-detail .content-links{font-size: 12px;padding: 5px;}
+.content .content-detail .content-links i{background-color: #ff6600;color: #fff;display: inline-block;width: 12px;height: 12px;text-align: center;text-align: center;}
+.content .content-detail .comment-box{margin: 25px 0px 15px;}
+.content .content-detail .comment-box textarea{width: 700px;border: 1px solid #e3e3e3;padding: 10px;resize: none;}
+.content .content-detail .comment-box .form-group{margin-top: 15px;font-size: 12px;}
+.content .content-detail .comment-box .form-group .verify-code{border: 1px solid #e3e3e3;height: 22px;padding: 2px 5px;}
+.content .content-detail .comment-box .form-group .warning{color: #ff6600;}
+.content .content-detail .comment-box .form-group .comment-btn{background-color: #ff9900;padding: 2px 25px;height: 26px;border: none;color: #fff;cursor: pointer;}
+.content .content-detail .comment-list{}
+.content .content-detail .comment-list ul li{border-top: 1px dashed #e3e3e3;padding: 10px 0px;}
+.content .content-detail .comment-list ul li .user-head{width: 50px;height: 50px;border-radius: 50%;border: 1px solid #e3e3e3;margin-right: 10px;}
+.content .content-detail .comment-list ul li .info h3{font-size: 16px;padding: 0px;margin: 0px;}
+.content .content-detail .comment-list ul li .info p{margin-top: 3px;}
+.content .content-detail .comment-list a.load-more{display: block;background-color: #f3f3f3;margin: 10px 0px;text-align: center;height: 40px;line-height: 40px;}
+.content .recommends{width: 400px;}
+.content .recommends .hot-search{border-bottom: 1px dashed #e3e3e3;padding-bottom: 10px;}
+.content .recommends .hot-search dl dd{padding: 5px;background-color: #f0f0f0;display: inline-block;margin: 0px 10px 10px 0px;}
+.content .recommends .hot-search dl dd:hover{background-color: #ff6600;}
+.content .recommends .hot-search dl dd:hover a{color: #fff;}
+.content .recommends .click-sort{}
+.content .recommends .click-sort li img.head{width: 40px;float: left;border-radius: 3px;}
+.content .recommends .click-sort li .info{width: 160px;margin-left: 10px;}
+.content .recommends .click-sort li .info h4{font-size: 12px;padding: 0px 0px 5px;}
+.content .recommends .click-sort li .info p{font-size: 10px;color: #999;}
+.content .recommends .videos dl dd{border: 1px solid #e3e3e3;width: 170px;float: left;margin: 0px 17px 17px 0px;position: relative;}
+.content .recommends .videos dl dd p{margin-left: 5px;}
+.content .recommends .videos dl dd .bg{display: none;;position: absolute;width: 170px;height: 170px;background-color: rgba(0,0,0,0.5);z-index: 3;text-align: center;}
+.content .recommends .videos dl dd .bg i{color: #fff;font-size: 50px;margin-top:65px;}

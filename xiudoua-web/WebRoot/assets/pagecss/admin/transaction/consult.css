@@ -1,0 +1,17 @@
+/**
+ *
+ */
+
+.consult-list{}
+.consult-list ul{margin: 0px 15px;padding: 0px;}
+.consult-list ul li{list-style: none;background-color: #f0f0f0;padding-bottom: 10px;}
+.consult-list ul li h4{background-color: #C5EADD;padding: 10px 15px;color: #666;font-size: 16px;}
+.consult-list ul li h4 .object{margin-left: 20px;}
+.consult-list ul li h4 .store{margin-left: 100px;}
+.consult-list ul li h4 .opt{margin-left: 100px;}
+.consult-list ul li .ask-detail{margin: 5px;border: 1px dashed #e3e3e3;background-color: #fff;padding-bottom: 5px;}
+.consult-list ul li .ask-detail p{margin: 0px;padding: 5px 15px 0px;}
+.consult-list ul li .replay{margin: 5px;border: 1px dashed #C8712A;background-color: #fff;padding-bottom: 5px;}
+.consult-list ul li .replay p{margin: 0px;padding: 5px 15px 0px;color: #C8712A;}
+
+.paging{margin: 15px;}

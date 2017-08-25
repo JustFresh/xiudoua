@@ -1,0 +1,13 @@
+/**
+ *
+ */
+
+.warning-info{margin: 15px;color: #eea236;border-bottom: 1px dotted #e3e3e3;padding-bottom: 15px;}
+.warning-info h4{margin: 0px 0px 15px;padding: 15px;border-bottom: 1px solid #eea236;}
+.warning-info p{line-height: 20px;color: #999;}
+
+.main .content .tab-panel{margin: 20px 0px 0px;padding: 0px 15px;}
+.main .content .tab-panel li{list-style: none;display: none;}
+.main .content .tab-panel li.selected{display: block;}
+label{display: block;}
+label b{color: #c33610;}

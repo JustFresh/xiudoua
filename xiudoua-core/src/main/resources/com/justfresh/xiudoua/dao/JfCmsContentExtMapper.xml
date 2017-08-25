@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.justfresh.xiudoua.dao.JfCmsContentExtMapper" >
+  <resultMap id="BaseResultMap" type="com.justfresh.xiudoua.model.JfCmsContentExt" >
+    <id column="content_id" property="contentId" jdbcType="INTEGER" />
+    <result column="seo_keywords" property="seoKeywords" jdbcType="VARCHAR" />
+    <result column="abstracts" property="abstracts" jdbcType="VARCHAR" />
+    <result column="download_url" property="downloadUrl" jdbcType="VARCHAR" />
+    <result column="video_format" property="videoFormat" jdbcType="VARCHAR" />
+    <result column="video_root" property="videoRoot" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.justfresh.xiudoua.model.JfCmsContentExt" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    content_id, seo_keywords, abstracts, download_url, video_format, video_root
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.justfresh.xiudoua.model.JfCmsContentExtExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jf_cms_content_ext
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.justfresh.xiudoua.model.JfCmsContentExtExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from jf_cms_content_ext
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jf_cms_content_ext
+    where content_id = #{contentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jf_cms_content_ext
+    where content_id = #{contentId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.justfresh.xiudoua.model.JfCmsContentExtExample" >
+    delete from jf_cms_content_ext
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.justfresh.xiudoua.model.JfCmsContentExt" >
+    insert into jf_cms_content_ext (content_id, seo_keywords, abstracts, 
+      download_url, video_format, video_root, 
+      content)
+    values (#{contentId,jdbcType=INTEGER}, #{seoKeywords,jdbcType=VARCHAR}, #{abstracts,jdbcType=VARCHAR}, 
+      #{downloadUrl,jdbcType=VARCHAR}, #{videoFormat,jdbcType=VARCHAR}, #{videoRoot,jdbcType=VARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.justfresh.xiudoua.model.JfCmsContentExt" >
+    insert into jf_cms_content_ext
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="contentId != null" >
+        content_id,
+      </if>
+      <if test="seoKeywords != null" >
+        seo_keywords,
+      </if>
+      <if test="abstracts != null" >
+        abstracts,
+      </if>
+      <if test="downloadUrl != null" >
+        download_url,
+      </if>
+      <if test="videoFormat != null" >
+        video_format,
+      </if>
+      <if test="videoRoot != null" >
+        video_root,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="contentId != null" >
+        #{contentId,jdbcType=INTEGER},
+      </if>
+      <if test="seoKeywords != null" >
+        #{seoKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="abstracts != null" >
+        #{abstracts,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadUrl != null" >
+        #{downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="videoFormat != null" >
+        #{videoFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="videoRoot != null" >
+        #{videoRoot,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.justfresh.xiudoua.model.JfCmsContentExtExample" resultType="java.lang.Integer" >
+    select count(*) from jf_cms_content_ext
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jf_cms_content_ext
+    <set >
+      <if test="record.contentId != null" >
+        content_id = #{record.contentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.seoKeywords != null" >
+        seo_keywords = #{record.seoKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="record.abstracts != null" >
+        abstracts = #{record.abstracts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.downloadUrl != null" >
+        download_url = #{record.downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.videoFormat != null" >
+        video_format = #{record.videoFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.videoRoot != null" >
+        video_root = #{record.videoRoot,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update jf_cms_content_ext
+    set content_id = #{record.contentId,jdbcType=INTEGER},
+      seo_keywords = #{record.seoKeywords,jdbcType=VARCHAR},
+      abstracts = #{record.abstracts,jdbcType=VARCHAR},
+      download_url = #{record.downloadUrl,jdbcType=VARCHAR},
+      video_format = #{record.videoFormat,jdbcType=VARCHAR},
+      video_root = #{record.videoRoot,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jf_cms_content_ext
+    set content_id = #{record.contentId,jdbcType=INTEGER},
+      seo_keywords = #{record.seoKeywords,jdbcType=VARCHAR},
+      abstracts = #{record.abstracts,jdbcType=VARCHAR},
+      download_url = #{record.downloadUrl,jdbcType=VARCHAR},
+      video_format = #{record.videoFormat,jdbcType=VARCHAR},
+      video_root = #{record.videoRoot,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.justfresh.xiudoua.model.JfCmsContentExt" >
+    update jf_cms_content_ext
+    <set >
+      <if test="seoKeywords != null" >
+        seo_keywords = #{seoKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="abstracts != null" >
+        abstracts = #{abstracts,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadUrl != null" >
+        download_url = #{downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="videoFormat != null" >
+        video_format = #{videoFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="videoRoot != null" >
+        video_root = #{videoRoot,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where content_id = #{contentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.justfresh.xiudoua.model.JfCmsContentExt" >
+    update jf_cms_content_ext
+    set seo_keywords = #{seoKeywords,jdbcType=VARCHAR},
+      abstracts = #{abstracts,jdbcType=VARCHAR},
+      download_url = #{downloadUrl,jdbcType=VARCHAR},
+      video_format = #{videoFormat,jdbcType=VARCHAR},
+      video_root = #{videoRoot,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where content_id = #{contentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.justfresh.xiudoua.model.JfCmsContentExt" >
+    update jf_cms_content_ext
+    set seo_keywords = #{seoKeywords,jdbcType=VARCHAR},
+      abstracts = #{abstracts,jdbcType=VARCHAR},
+      download_url = #{downloadUrl,jdbcType=VARCHAR},
+      video_format = #{videoFormat,jdbcType=VARCHAR},
+      video_root = #{videoRoot,jdbcType=VARCHAR}
+    where content_id = #{contentId,jdbcType=INTEGER}
+  </update>
+</mapper>

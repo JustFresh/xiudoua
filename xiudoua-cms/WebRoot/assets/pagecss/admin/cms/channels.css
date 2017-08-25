@@ -1,0 +1,8 @@
+/**
+ *
+ */
+
+.info-content{margin: 15px;}
+.info-content .form-line{border-bottom: 1px solid #f0f0f0;padding-bottom: 15px;margin-bottom: 15px;}
+.info-content .form-line label{margin-bottom: 10px;}
+.info-content .form-line textarea{width: 600px;border: 1px solid #d1d1d1;outline: none;}

@@ -1,0 +1,41 @@
+/**
+ *
+ */
+
+.search-form .form-element .input-text, .search-form .form-element .input-select{width: 120px;}
+p.help-block{color: #c33610;}
+.upfilebox {
+    position: relative;
+}
+.upfilebox input {
+    width: 100px;
+    height: 45px;
+    position: relative;
+    z-index: 9;
+    opacity: 0;
+}
+.upfilebox label {
+    position: absolute;
+    background: #501521;
+    display: inline-block;
+    color: #fff;
+    width: 100px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+
+#sequelsForm{    padding-top: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    position: fixed;
+    width: 100%;
+    height: 90px;}
+    
+button.add-sequels{margin-top: 25px;}
+
+#sequelsList{margin-top: 100px;width: 100%;height: 490px;background-color: #fafafa;border-bottom: 1px solid #e3e3e3;overflow-y: auto;overflow-x: hidden;}
+
+

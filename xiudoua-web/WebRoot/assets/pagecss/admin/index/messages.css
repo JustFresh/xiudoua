@@ -1,0 +1,9 @@
+/**
+ *
+ */
+ 
+.main .content .tab-panel{margin: 20px 0px 0px;padding: 0px 15px;}
+.main .content .tab-panel li{list-style: none;display: none;}
+.main .content .tab-panel li.selected{display: block;}
+label{display: block;}
+label em{color: #c33610;font-style: normal;font-size: 12px;}

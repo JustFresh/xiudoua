@@ -1,0 +1,75 @@
+/**
+ * @desc: 管理员后台首页页面的样式文件
+ * @time: 2017-06-23 12:59
+ * @autohor: JustFresh
+ * @version: v1.0.0
+ */
+body{}
+
+#header{background-color: #333;height:50px;position: fixed;top: 0px;width: 100%;z-index: 3;color: #fff;}
+#header .logo{height: 50px;}
+#header h3{color: #fff;line-height: 50px;margin: 0px;padding: 0px;}
+#header .module-list{position: absolute;left: 15%;bottom: 0px;margin: 0px;padding: 0px;height: 35px;}
+#header .module-list li{list-style: none;float: left;margin-right: 10px;}
+#header .module-list li a{color: #fff;text-align: center;padding:8px 25px;display: inline-block;border-radius: 5px 5px 0px 0px;}
+#header .module-list li a:hover{color: #333;border-radius: 5px 5px 0px 0px;background-color: #fff;}
+#header .module-list li a.selected{color: #333;background-color: #fff;}
+#header .module-list li.split-line{height: 15px;margin: 12px 25px;width: 1px;background-color: #fff;padding: 0px;}
+#header .opt ul li{list-style: none;float: left;text-align: center;padding:8px;}
+#header .opt ul li.split-line{height: 30px;margin: 10px 25px;width: 1px;background-color: #636161;padding: 0px;}
+#header .opt ul li a,#header .opt ul li a p{color: #fff;text-decoration: none;font-size: 12px;}
+#header .opt ul li i{display: block;font-size: 15px;}
+
+.main{height: 100%;overflow-y: hidden;position: relative;z-index: 2;width: 100%;margint-top: 50px;}
+.main .content{height: 100%;overflow-y: auto;width: 85%;margin-top: 50px;overflow-y: auto;overflow-x: hidden;padding-bottom: 50px;}
+
+.main .content .tab-nav{border-bottom: 3px solid #333;margin: 20px 15px 0px;}
+.main .content .tab-nav ul{margin: 0px;padding: 0px;}
+.main .content .tab-nav ul li{list-style: none;float: left;background-color: #f3f3f3;margin-right: 10px;}
+.main .content .tab-nav ul li a{color: #666;padding: 10px 30px;display: inline-block;}
+.main .content .tab-nav ul li.selected{background-color: #333;border-radius: 3px 3px 0px 0px;}
+.main .content .tab-nav ul li.selected a{color: #fff;}
+
+
+/* 个人手写自适应样式部分 */
+@media(max-width:970px){
+	.main .left-nav{background-color: #666;height: 100%;overflow-y: auto;width: 15%;overflow-x: hidden;position: absolute;top: 50px;padding-bottom: 50px;}
+	.main .left-nav ul{margin: 0px;padding: 0px;}
+	.main .left-nav ul li{list-style: none;margin: 0px;border-bottom: 1px dotted #f0f0f0;}
+	.main .left-nav ul li a{color: #fff;padding: 15px;display: block;}
+	.main .left-nav ul li > a:hover,.main .left-nav ul li.selected > a{background-color: #f0f0f0;color: #666;text-decoration: none;}
+	.main .left-nav ul li a > i{}
+	.main .left-nav ul li dl{margin-bottom: 0px;}
+	.main .left-nav ul li dl dd{margin: 0px;border-bottom: 1px dotted #f0f0f0;}
+	.main .left-nav ul li dl dd a{padding-left: 15px;}
+	.main .left-nav ul li dl dd a:hover{background-color: #f0f0f0;color: #666;text-decoration: none;}
+	.main .left-nav ul li dl dd:first-child{border-top: 1px solid #f0f0f0;}
+	.main .left-nav ul li dl dd:last-child{padding-bottom: 0px;border-bottom: none;}
+	.main .left-nav ul li:last-child{border-bottom: none;}
+	.main .left-nav ul li span.hidden-small{display: none !important;}
+}
+@media(min-width:970px){
+	.main .left-nav{background-color: #666;height: 100%;overflow-y: auto;width: 15%;overflow-x: hidden;position: absolute;top: 50px;padding-bottom: 50px;}
+	.main .left-nav ul{margin: 0px;padding: 0px;}
+	.main .left-nav ul li{list-style: none;margin: 0px;border-bottom: 1px dotted #f0f0f0;}
+	.main .left-nav ul li a{color: #fff;padding: 15px;display: block;}
+	.main .left-nav ul li > a:hover,.main .left-nav ul li.selected > a{background-color: #f0f0f0;color: #666;text-decoration: none;}
+	.main .left-nav ul li a > i{}
+	.main .left-nav ul li dl{margin-bottom: 0px;}
+	.main .left-nav ul li dl dd{margin: 0px;border-bottom: 1px dotted #f0f0f0;}
+	.main .left-nav ul li dl dd a{padding-left: 35px;}
+	.main .left-nav ul li dl dd a:hover{background-color: #f0f0f0;color: #666;text-decoration: none;}
+	.main .left-nav ul li dl dd:first-child{border-top: 1px solid #f0f0f0;}
+	.main .left-nav ul li dl dd:last-child{padding-bottom: 0px;border-bottom: none;}
+	.main .left-nav ul li:last-child{border-bottom: none;}
+	.main .left-nav ul li span.hidden-small{display: inline-block !important;}
+}
+
+.search-form{margin-top: 15px;}
+.search-form .form-element{margin-left: 10px;color: #666;}
+.search-form .form-element .input-text,.search-form .form-element .input-select{padding: 8px;border: 1px solid #e3e3e3 !important;outline: none;color: #666;}
+.bottom-opts{margin: 0px 15px;}
+
+.warning-info{margin: 15px;color: #eea236;border-bottom: 1px dotted #e3e3e3;padding-bottom: 15px;}
+.warning-info h4{margin: 0px 0px 15px;padding: 15px;border-bottom: 1px solid #eea236;}
+.warning-info p{line-height: 20px;color: #999;}

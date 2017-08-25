@@ -1,0 +1,14 @@
+/**
+ *
+ */
+body{font-family: 'Î¢ÈíÑÅºÚ' !important;font-size: 12px !important;}
+.content{margin: 20px 0px;}
+
+.form-group{margin-bottom: 15px;}
+.form-group label{display: inline-block;max-width: 100%;margin-bottom: 5px;font-weight: 700;}
+.form-control{display: block;width: 700px;padding: 8px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);box-shadow: inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+#contactUs{width: 100%;height: 360px;}
+#contactUs .container{width: 1200px;margin: 0px auto;}
+#contactUs label{color: #666;}
+#contactUs .form-control{background-color: #f4f4f4;border:none;outline: none;color: #333;}
+#contactUs .btn{display: inline-block;padding: 6px 15px;margin-bottom: 0;font-size: 12px;text-align: center;border: 1px solid transparent;border-radius: 4px;}

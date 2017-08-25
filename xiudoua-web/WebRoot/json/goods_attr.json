@@ -1,0 +1,16 @@
+{
+    "goods_attr": [
+        {
+            "attr_name": "产地",
+            "attr_value": "贵州六盘水"
+        },
+        {
+            "attr_name": "生产方式",
+            "attr_value": "绿色无公害"
+        },
+        {
+            "attr_name": "保质期",
+            "attr_value": "两年"
+        }
+    ]
+}

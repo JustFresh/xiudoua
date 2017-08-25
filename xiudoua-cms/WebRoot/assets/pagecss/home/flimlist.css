@@ -1,0 +1,10 @@
+/**
+ *
+ */
+body{font-family: 'Î¢ÈíÑÅºÚ' !important;font-size: 12px !important;}
+.filmlist{background-color: #282724;padding: 15px 0px 10px 20px;margin: 15px 0px;}
+.filmlist ul{margin: 0px;padding: 0px;}
+.filmlist ul li{float: left;margin-right: 24px;width: 210px;height: 370px;background-color: #fff;margin-bottom: 24px;border: 1px solid #fff;}
+.filmlist ul li:hover{border: 1px solid #ff6600;box-shadow: 0px 0px 15px #ff6600;}
+.filmlist ul li img{width: 192px;margin: 10px;}
+.filmlist ul li p{margin: 0px 10px;}

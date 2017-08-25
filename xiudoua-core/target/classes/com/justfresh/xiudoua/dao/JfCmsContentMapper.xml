@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.justfresh.xiudoua.dao.JfCmsContentMapper" >
+  <resultMap id="BaseResultMap" type="com.justfresh.xiudoua.model.JfCmsContent" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="thumb" property="thumb" jdbcType="VARCHAR" />
+    <result column="author_id" property="authorId" jdbcType="INTEGER" />
+    <result column="channel_id" property="channelId" jdbcType="INTEGER" />
+    <result column="c_type" property="cType" jdbcType="TINYINT" />
+    <result column="channel_name" property="channelName" jdbcType="VARCHAR" />
+    <result column="author_name" property="authorName" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="is_allow_comment" property="isAllowComment" jdbcType="TINYINT" />
+    <result column="click_num" property="clickNum" jdbcType="INTEGER" />
+    <result column="like_num" property="likeNum" jdbcType="INTEGER" />
+    <result column="is_top" property="isTop" jdbcType="TINYINT" />
+    <result column="is_recommend" property="isRecommend" jdbcType="TINYINT" />
+    
+    <result column="abstracts" property="abstracts" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, title, thumb, author_id, channel_id, c_type, channel_name, author_name, source, 
+    create_time, status, is_allow_comment, click_num, like_num, is_top, is_recommend
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.justfresh.xiudoua.model.JfCmsContentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from jf_cms_content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jf_cms_content
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jf_cms_content
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.justfresh.xiudoua.model.JfCmsContentExample" >
+    delete from jf_cms_content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.justfresh.xiudoua.model.JfCmsContent" >
+    insert into jf_cms_content (id, title, thumb, 
+      author_id, channel_id, c_type, 
+      channel_name, author_name, source, 
+      create_time, status, is_allow_comment, 
+      click_num, like_num, is_top, 
+      is_recommend)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{thumb,jdbcType=VARCHAR}, 
+      #{authorId,jdbcType=INTEGER}, #{channelId,jdbcType=INTEGER}, #{cType,jdbcType=TINYINT}, 
+      #{channelName,jdbcType=VARCHAR}, #{authorName,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, #{isAllowComment,jdbcType=TINYINT}, 
+      #{clickNum,jdbcType=INTEGER}, #{likeNum,jdbcType=INTEGER}, #{isTop,jdbcType=TINYINT}, 
+      #{isRecommend,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.justfresh.xiudoua.model.JfCmsContent" >
+    insert into jf_cms_content
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="thumb != null" >
+        thumb,
+      </if>
+      <if test="authorId != null" >
+        author_id,
+      </if>
+      <if test="channelId != null" >
+        channel_id,
+      </if>
+      <if test="cType != null" >
+        c_type,
+      </if>
+      <if test="channelName != null" >
+        channel_name,
+      </if>
+      <if test="authorName != null" >
+        author_name,
+      </if>
+      <if test="source != null" >
+        source,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isAllowComment != null" >
+        is_allow_comment,
+      </if>
+      <if test="clickNum != null" >
+        click_num,
+      </if>
+      <if test="likeNum != null" >
+        like_num,
+      </if>
+      <if test="isTop != null" >
+        is_top,
+      </if>
+      <if test="isRecommend != null" >
+        is_recommend,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="thumb != null" >
+        #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null" >
+        #{authorId,jdbcType=INTEGER},
+      </if>
+      <if test="channelId != null" >
+        #{channelId,jdbcType=INTEGER},
+      </if>
+      <if test="cType != null" >
+        #{cType,jdbcType=TINYINT},
+      </if>
+      <if test="channelName != null" >
+        #{channelName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorName != null" >
+        #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isAllowComment != null" >
+        #{isAllowComment,jdbcType=TINYINT},
+      </if>
+      <if test="clickNum != null" >
+        #{clickNum,jdbcType=INTEGER},
+      </if>
+      <if test="likeNum != null" >
+        #{likeNum,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null" >
+        #{isTop,jdbcType=TINYINT},
+      </if>
+      <if test="isRecommend != null" >
+        #{isRecommend,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.justfresh.xiudoua.model.JfCmsContentExample" resultType="java.lang.Integer" >
+    select count(*) from jf_cms_content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jf_cms_content
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thumb != null" >
+        thumb = #{record.thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authorId != null" >
+        author_id = #{record.authorId,jdbcType=INTEGER},
+      </if>
+      <if test="record.channelId != null" >
+        channel_id = #{record.channelId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cType != null" >
+        c_type = #{record.cType,jdbcType=TINYINT},
+      </if>
+      <if test="record.channelName != null" >
+        channel_name = #{record.channelName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authorName != null" >
+        author_name = #{record.authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.source != null" >
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.isAllowComment != null" >
+        is_allow_comment = #{record.isAllowComment,jdbcType=TINYINT},
+      </if>
+      <if test="record.clickNum != null" >
+        click_num = #{record.clickNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.likeNum != null" >
+        like_num = #{record.likeNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.isTop != null" >
+        is_top = #{record.isTop,jdbcType=TINYINT},
+      </if>
+      <if test="record.isRecommend != null" >
+        is_recommend = #{record.isRecommend,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jf_cms_content
+    set id = #{record.id,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      thumb = #{record.thumb,jdbcType=VARCHAR},
+      author_id = #{record.authorId,jdbcType=INTEGER},
+      channel_id = #{record.channelId,jdbcType=INTEGER},
+      c_type = #{record.cType,jdbcType=TINYINT},
+      channel_name = #{record.channelName,jdbcType=VARCHAR},
+      author_name = #{record.authorName,jdbcType=VARCHAR},
+      source = #{record.source,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=TINYINT},
+      is_allow_comment = #{record.isAllowComment,jdbcType=TINYINT},
+      click_num = #{record.clickNum,jdbcType=INTEGER},
+      like_num = #{record.likeNum,jdbcType=INTEGER},
+      is_top = #{record.isTop,jdbcType=TINYINT},
+      is_recommend = #{record.isRecommend,jdbcType=TINYINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.justfresh.xiudoua.model.JfCmsContent" >
+    update jf_cms_content
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="thumb != null" >
+        thumb = #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null" >
+        author_id = #{authorId,jdbcType=INTEGER},
+      </if>
+      <if test="channelId != null" >
+        channel_id = #{channelId,jdbcType=INTEGER},
+      </if>
+      <if test="cType != null" >
+        c_type = #{cType,jdbcType=TINYINT},
+      </if>
+      <if test="channelName != null" >
+        channel_name = #{channelName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorName != null" >
+        author_name = #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isAllowComment != null" >
+        is_allow_comment = #{isAllowComment,jdbcType=TINYINT},
+      </if>
+      <if test="clickNum != null" >
+        click_num = #{clickNum,jdbcType=INTEGER},
+      </if>
+      <if test="likeNum != null" >
+        like_num = #{likeNum,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null" >
+        is_top = #{isTop,jdbcType=TINYINT},
+      </if>
+      <if test="isRecommend != null" >
+        is_recommend = #{isRecommend,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.justfresh.xiudoua.model.JfCmsContent" >
+    update jf_cms_content
+    set title = #{title,jdbcType=VARCHAR},
+      thumb = #{thumb,jdbcType=VARCHAR},
+      author_id = #{authorId,jdbcType=INTEGER},
+      channel_id = #{channelId,jdbcType=INTEGER},
+      c_type = #{cType,jdbcType=TINYINT},
+      channel_name = #{channelName,jdbcType=VARCHAR},
+      author_name = #{authorName,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      status = #{status,jdbcType=TINYINT},
+      is_allow_comment = #{isAllowComment,jdbcType=TINYINT},
+      click_num = #{clickNum,jdbcType=INTEGER},
+      like_num = #{likeNum,jdbcType=INTEGER},
+      is_top = #{isTop,jdbcType=TINYINT},
+      is_recommend = #{isRecommend,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 按条件，查询最大ID -->
+	<select id="selectMaxIdByExample" resultType="java.lang.Integer" parameterType="com.justfresh.xiudoua.model.JfCmsContent">
+		select max(id) from jf_cms_content
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+
+	<!-- 分页 -->
+	<select id="selectWithPageByExample" resultMap="BaseResultMap"
+		parameterType="map">
+		select content.*,ext.abstracts from jf_cms_content as content
+		LEFT JOIN jf_cms_content_ext as ext on content.id = ext.content_id
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+		<if test="example.orderByClause != null">
+			order by
+			${example.orderByClause} ${params.order}
+		</if>
+		limit ${params.rowStart}, ${params.pageSize}
+	</select>
+</mapper>

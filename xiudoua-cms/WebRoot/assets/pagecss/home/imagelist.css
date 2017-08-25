@@ -1,0 +1,24 @@
+/**
+ *
+ */
+body{font-family: 'Î¢ÈíÑÅºÚ' !important;font-size: 12px !important;}
+.content{margin: 15px 0px;}
+.content .imagelist{width: 890px;}
+.content .imagelist ul{}
+.content .imagelist ul li{border: 1px solid #d1d1d1;width: 200px;float: left;margin-right: 20px;margin-bottom: 15px;box-shadow: 0px 0px 15px #d1d1d1;}
+.content .imagelist ul li .thumb{width: 200px;}
+.content .imagelist ul li h4{font-size: 12px;margin: 5px 8px;padding: 0px;}
+.content .imagelist ul li p{margin: 0px 8px;font-size: 10px;}
+.content .imagelist ul li p.author{margin-top:5px;}
+.content .imagelist ul li p.author .head{border-radius: 50%;width: 20px;display: inline-block;}
+.content .imagelist ul li:hover{box-shadow: 0px 0px 15px #ff6600;}
+
+.recommend{width: 245px;}
+aside .widget_container li{padding-left: 0px;}
+.recommend .widget_container li img.head{width: 40px;float: left;border-radius: 3px;}
+.recommend .widget_container li .info{width: 160px;margin-left: 10px;}
+.recommend .widget_container li .info h4{font-size: 12px;padding: 0px 0px 5px;}
+.recommend .widget_container li .info p{font-size: 10px;color: #999;}
+.recommend .widget_container.videos ul li{border: 1px solid #e3e3e3;padding: 15px;margin-bottom: 10px;}
+.recommend .widget_container.videos ul li .thumb{}
+.recommend .widget_container.videos ul li h4{font-size: 12px;padding: 0px;}
